@@ -26,6 +26,18 @@ def get_agent(session_id):
         sessions[session_id] = ProductAgent(api_key)
     return sessions[session_id]
 
+@app.route('/')
+def home():
+    """Root endpoint"""
+    return jsonify({
+        'message': 'Chatbot API is running on Vercel!',
+        'endpoints': {
+            'health': '/api/health',
+            'chat': '/api/chat (POST)',
+            'reset': '/api/reset (POST)'
+        }
+    })
+
 @app.route('/api/chat', methods=['POST'])
 def chat():
     """Chat endpoint"""
