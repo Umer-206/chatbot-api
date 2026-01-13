@@ -69,5 +69,10 @@ def health():
     """Health check endpoint"""
     return jsonify({'status': 'ok', 'message': 'Chatbot API is running'})
 
-if __name__ == '__main__':
+# Vercel ke liye
+if __name__ != '__main__':
+    # Production (Vercel)
+    application = app
+else:
+    # Local development
     app.run(debug=True, host='0.0.0.0', port=5000)
