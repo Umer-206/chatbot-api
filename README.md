@@ -119,13 +119,12 @@ https://chatbot-api-sigma-lyart.vercel.app
      2-Connected directly to live Vercel API
 
 ## 🧹 Recommended .gitignore
- ---
  __pycache__/
  .env
  *.pyc
  .DS_Store
 
- ---
+
 
 🧑‍💻 Author
 Muhammad Umer Iqbal — AI Engineer
