@@ -119,10 +119,10 @@ https://chatbot-api-sigma-lyart.vercel.app
      2-Connected directly to live Vercel API
 
 ## 🧹 Recommended .gitignore
- __pycache__/
- .env
- *.pyc
- .DS_Store
+     1-__pycache__/
+     2-.env
+     3-*.pyc
+     4-.DS_Store
 
 
 
