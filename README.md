@@ -91,20 +91,42 @@ https://chatbot-api-sigma-lyart.vercel.app
 
 ### Chat Endpoint
 **POST**
-
-#### Request Body:
-```json
-{
-  "message": "Show me available products",
-  "session_id": "unique_user_id"
-}
-
-Request Body
-{
-  "response": "Here is the product list...",
-  "session_id": "unique_user_id"
-}
+ 1- /api/chat
 
 #### Request Body:
 
+ **Response:**
 
+### Health Check:
+ **GET**
+ **Response:**
+
+## 🛠️ Local Development
+  **Install Dependencies**
+     1-pip install -r requirements.txt
+   **Run Locally**
+     2-python main.py
+    **Server runs on:**
+     3-http://localhost:5000  
+
+# 🚀 Deployment
+ **Backend (Vercel)**
+     1-Deployed as a serverless Python API
+     2-Configured via vercel.json
+
+ **Frontend (GitHub Pages)**
+     1-Static chatbot widget hosted via GitHub Pages
+     2-Connected directly to live Vercel API
+
+## 🧹 Recommended .gitignore
+ ---
+ __pycache__/
+ .env
+ *.pyc
+ .DS_Store
+
+ ---
+
+🧑‍💻 Author
+Muhammad Umer Iqbal — AI Engineer
+<p align="left"> <a href="https://github.com/Umer-206"> <img src="https://img.shields.io/badge/GitHub-000?logo=github&logoColor=white" /> </a> <a href="https://www.linkedin.com/in/muhammad-umer-iqbal-b73768185"> <img src="https://img.shields.io/badge/LinkedIn-0077B5?logo=linkedin&logoColor=white" /> </a> <a href="mailto:umer.mhtecnologies@gmail.com"> <img src="https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white" /> </a> </p>
