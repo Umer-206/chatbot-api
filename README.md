@@ -1,88 +1,110 @@
-# Chatbot Project
+# 🤖 AI Product Chatbot API
 
-Overview
---------
+<p align="center">
+  <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png" width="80">
+</p>
 
-This repository contains a small Python-based chatbot project with a modular layout: agents, API glue, configuration, data sources, and a simple static chat widget. The README below lists the full project structure and explains the purpose of each file and folder.
+<p align="center">
+AI-powered product chatbot built with Python and modular agent architecture — designed for website integration, mobile demos, and scalable serverless deployment.
+</p>
 
-Project structure
------------------
+---
 
-```
-app.py
-main.py
-requirements.txt
-vercel.json
-agents/
-    __init__.py
-    product_agent.py
-    __pycache__/
-api/
-    __init__.py
-config/
-    __init__.py
-    settings.py
-    __pycache__/
-data/
-    __init__.py
-    faqs.py
-    products.py
-    __pycache__/
-static/
-    chat-widget.html
-utils/
-    __init__.py
-    helpers.py
+## 📌 About This Project
 
-```
+This project is a **Python-based AI chatbot system** designed to handle product-related queries through a clean API interface.  
+It is built with a **modular agent architecture**, allowing easy expansion for FAQs, products, and business logic.
 
-File and folder explanations
---------------------------
+The chatbot is production-ready and supports:
 
-- `app.py` : Application entrypoint or WSGI/ASGI mount. Likely sets up the web server (Flask, FastAPI, etc.), initializes routing, and registers endpoints or middleware. This is where the app object is created and run.
+- Website chatbot integration  
+- Mobile live demo access  
+- Serverless deployment on Vercel  
+- Static frontend hosting via GitHub Pages  
 
-- `main.py` : Secondary runner script. Often used to start the application for local development or to provide an alternate CLI entrypoint. May import `app` and call `run()`.
+---
 
-- `requirements.txt` : Python dependency list used to install required packages with `pip install -r requirements.txt`.
+## 🧠 Features
 
-- `vercel.json` : Vercel deployment configuration. Controls how the project is deployed to Vercel (build settings, routes, serverless functions mapping, etc.).
+- 💬 Intelligent product-based chatbot agent  
+- 🧩 Modular agent architecture  
+- 📦 Product & FAQ knowledge base  
+- 🌐 REST API endpoints (`/api/chat`, `/api/health`)  
+- ⚡ Serverless backend deployment (Vercel)  
+- 🖥️ Static chat widget frontend  
+- 📱 Mobile-friendly live demo  
+- 🔐 Environment-based configuration  
 
-- `agents/` : Contains agent implementations which encapsulate conversational/business logic.
-  - `__init__.py` : Marks the directory as a Python package and may expose package-level imports.
-  - `product_agent.py` : Agent focused on product-related interactions (searching products, answering product questions, recommending items). Contains the logic that interprets user intents and queries `data/products.py` or other services.
+---
 
-- `api/` : API layer for the app.
-  - `__init__.py` : Package initializer; may register API routes or expose helper functions used by the web server.
+## 🚀 Tech Stack / Tools Used
 
-- `config/` : Configuration values and settings loader.
-  - `__init__.py` : Package initializer.
-  - `settings.py` : Centralized configuration (environment variables, toggles, API keys, host/port, and other runtime settings).
+![Python](https://img.shields.io/badge/Python-3670A0?logo=python&logoColor=white)
+![Flask](https://img.shields.io/badge/Flask-000000?logo=flask&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white)
+![HTML](https://img.shields.io/badge/HTML-239120?logo=html5&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![GitHub Pages](https://img.shields.io/badge/GitHub_Pages-222222?logo=githubpages&logoColor=white)
 
-- `data/` : Static or example data used by the agents.
-  - `__init__.py` : Package initializer.
-  - `faqs.py` : Frequently asked questions dataset (likely a dict/list of Q&A pairs used for retrieval or matching).
-  - `products.py` : Product dataset (list/dict of product entries used by `product_agent.py` for lookup or recommendations).
+---
 
-- `static/` : Static assets for a frontend widget or demo.
-  - `chat-widget.html` : A simple frontend chat widget (HTML + inline JS/CSS) that can connect to the backend API to send/receive messages.
+## 📂 Project Structure
 
-- `utils/` : Utility helpers used across the project.
-  - `__init__.py` : Package initializer.
-  - `helpers.py` : Reusable functions (text normalization, matching helpers, small utilities to keep core logic clean).
+chatbot-api/
+├── app.py Application entrypoint (API server)
+├── main.py Local development runner
+├── requirements.txt Python dependencies
+├── vercel.json Vercel deployment configuration
+├── agents/
+│ ├── init.py
+│ └── product_agent.py Product chatbot agent logic
+├── api/
+│ └── init.py API routing layer
+├── config/
+│ ├── init.py
+│ └── settings.py Environment & app settings
+├── data/
+│ ├── init.py
+│ ├── faqs.py FAQ dataset
+│ └── products.py Product dataset
+├── static/
+│ └── chat-widget.html Frontend chat widget (HTML + JS)
+├── utils/
+│ ├── init.py
+│ └── helpers.py Shared helper utilities
+└── README.md Project documentation
 
-Notes and recommendations
--------------------------
+---
 
-- The `__pycache__` folders contain Python bytecode caches and can be ignored/removed from version control (add them to `.gitignore` if needed).
-- To run locally, install dependencies from `requirements.txt`, then run `python main.py` or `python app.py` depending on which script is intended to start the server.
-- If deploying to Vercel, ensure `vercel.json` is configured to point the serverless entrypoint to the correct Python file or function.
+## 🌐 Live Demo
 
-Contact / Next steps
---------------------
+### 🔹 Chatbot Frontend (Mobile & Web)
+https://umer-206.github.io/chatbot-api/static/chat-widget.html
 
-If you want, I can:
 
-- Add a short `README` usage section with exact run commands based on the detected framework (Flask/FastAPI) if you want me to inspect `app.py` or `main.py`.
-- Generate a `requirements.txt` pin file (if missing packages are discovered).
+### 🔹 Backend API (Vercel)
+https://chatbot-api-sigma-lyart.vercel.app
 
-This README was created without modifying any existing code.
+---
+
+## 🔌 API Usage
+
+### Chat Endpoint
+**POST**
+
+#### Request Body:
+```json
+{
+  "message": "Show me available products",
+  "session_id": "unique_user_id"
+}
+
+Request Body
+{
+  "response": "Here is the product list...",
+  "session_id": "unique_user_id"
+}
+
+#### Request Body:
+
+
